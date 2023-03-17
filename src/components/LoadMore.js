@@ -48,7 +48,7 @@ const App = () => {
         return [...list, ...items.slice(startIndex, endIndex)];
 		  })
       setPage(page+1);
-}, 1000)
+}, 3000)
 
 	}
 
