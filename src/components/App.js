@@ -1,6 +1,7 @@
 
 import React from "react";
 import {useState} from "react"
+import LoadMore from "./LoadMore";
 import './../styles/App.css';
 
 const items = [
@@ -35,35 +36,13 @@ const items = [
   "Item 29",
   "Item 30"
 ];
-const [list, setList] = useState([]);
-
-function addMore() {
-	setList(() => {
-
-	})
-}
 
 const App = () => {
-	const [list, setList] = useState([]);
-	const [firstIndex, setFirstIndex] = useState(0);
-	const [secondIndex, setSecondIndex] = useState(10);
-
-	function addMore() {
-		setList((prevList) => {
-			setFirstIndex(firstIndex+10);
-			setSecondIndex(secondIndex+10);
-			return prevList.concat(items.slice(firstIndex, secondIndex));
-		})
-	}
-
 
   return (
     <div>
         {/* Do not remove the main div */}
-	  <ul>
-		{list.map((item) => <li>{item}</li>)}
-	  </ul>
-	  <button onClick={addMore}>Load More</button>
+        <LoadMore />
     </div>
   )
 	
